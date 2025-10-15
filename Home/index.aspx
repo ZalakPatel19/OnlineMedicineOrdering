@@ -1,0 +1,217 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Online_Medicine_Ordering.Home.index" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Online Medicine Ordering</title>
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="icon" href="../Assets/images/favicon.ico" type="image/x-icon">
+</head>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.aspx" class="logo">MediCare</a>
+            <ul class="nav-links">
+                <li><a href="index.aspx">Home</a></li>
+                <li><a href="../Shop/medicines.aspx">Medicines</a></li>
+                <li><a href="../Shop/categories.aspx">Categories</a></li>
+                <li><a href="about.aspx">About</a></li>
+                <li><a href="contact.aspx">Contact</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="../User/login.aspx" class="btn btn-secondary" id="loginBtn">Login</a>
+                <a href="../User/register.aspx" class="btn btn-primary" id="registerBtn">Register</a>
+                <div id="userMenu" style="display: none;"></div>
+                <a href="../Shop/cart.aspx" class="btn btn-primary">
+                    Cart (<span id="cartCount">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Health, Our Priority</h1>
+            <p>Order medicines online with confidence and convenience</p>
+            <a href="../Shop/medicines.aspx" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-container">
+        <form class="search-bar" id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search for medicines, brands, or symptoms...">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="container">
+        <h2 class="text-center mb-4">Shop by Category</h2>
+        <div class="grid grid-4">
+            <div class="card">
+                <img src="../../images/tablets.jpeg" alt="Tablets" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Tablets & Capsules</h3>
+                    <p class="card-text">Prescription and over-the-counter tablets</p>
+                    <a href="../Shop/categories.aspx?category=tablets" class="btn btn-primary">Browse</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../../images/syrups.jpeg" alt="Syrups" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Syrups & Liquids</h3>
+                    <p class="card-text">Cough syrups, tonics, and liquid medicines</p>
+                    <a href="../Shop/categories.aspx?category=syrups" class="btn btn-primary">Browse</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../../images/injections.jpeg" alt="Injections" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Injections</h3>
+                    <p class="card-text">Vaccines and injectable medicines</p>
+                    <a href="../Shop/categories.aspx?category=injections" class="btn btn-primary">Browse</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../../images/otc.jpeg" alt="OTC" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">OTC Products</h3>
+                    <p class="card-text">Over-the-counter health products</p>
+                    <a href="../Shop/categories.aspx?category=otc" class="btn btn-primary">Browse</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container">
+        <h2 class="text-center mb-4">Featured Medicines</h2>
+        <div class="grid grid-3">
+            <div class="card product-card" data-category="tablets" data-price="15.99" data-name="Paracetamol 500mg">
+                <img src="../../images/paracetamol.jpeg" alt="Paracetamol" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Paracetamol 500mg</h3>
+                    <p class="card-text">Pain relief and fever reducer</p>
+                    <div class="price">$15.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="1" 
+                            data-product-name="Paracetamol 500mg" 
+                            data-product-price="15.99" 
+                            data-product-image="../../images/paracetamol.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="card product-card" data-category="syrups" data-price="12.50" data-name="Cough Syrup">
+                <img src="../../images/coughsyrup.jpeg" alt="Cough Syrup" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Cough Syrup</h3>
+                    <p class="card-text">Relieves cough and throat irritation</p>
+                    <div class="price">$12.50</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="2" 
+                            data-product-name="Cough Syrup" 
+                            data-product-price="12.50" 
+                            data-product-image="../../images/coughsyrup.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="card product-card" data-category="otc" data-price="8.99" data-name="Vitamin D3">
+                <img src="../../images/vitaminD3.jpeg" alt="Vitamin D3" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Vitamin D3</h3>
+                    <p class="card-text">Essential vitamin for bone health</p>
+                    <div class="price">$8.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="3" 
+                            data-product-name="Vitamin D3" 
+                            data-product-price="8.99" 
+                            data-product-image="../../images/vitaminD3.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="../Shop/medicines.html" class="btn btn-primary">View All Medicines</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container">
+        <h2 class="text-center mb-4">Why Choose MediCare?</h2>
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <div class="card-content">
+                    <h3 class="card-title">🏥 Licensed Pharmacy</h3>
+                    <p class="card-text">All medicines are sourced from licensed pharmacies and verified for authenticity.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-content">
+                    <h3 class="card-title">🚚 Fast Delivery</h3>
+                    <p class="card-text">Same-day delivery available in most areas. Free delivery on orders over $50.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-content">
+                    <h3 class="card-title">💊 Prescription Upload</h3>
+                    <p class="card-text">Upload your prescription and get medicines delivered to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="container">
+        <div class="card text-center">
+            <div class="card-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for health tips and medicine updates</p>
+                <form class="search-bar" style="max-width: 400px; margin: 0 auto;">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+         <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare</h3>
+                    <p>Your trusted online pharmacy for all your healthcare needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.aspx">Home</a>
+                    <a href="../Shop/medicines.aspx">Medicines</a>
+                    <a href="../Shop/categories.aspx">Categories</a>
+                    <a href="about.aspx">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Care</h3>
+                    <a href="contact.aspx">Contact Us</a>
+                    <a href="../User/login.aspx">My Account</a>
+                    <a href="../User/orders.aspx">Order Tracking</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Assets/js/main.js"></script>
+</asp:Content>

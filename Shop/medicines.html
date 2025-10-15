@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Medicines - MediCare</title>
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="icon" href="../Assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../Home/index.html" class="logo">MediCare</a>
+            <ul class="nav-links">
+                <li><a href="../Home/index.html">Home</a></li>
+                <li><a href="medicines.html">Medicines</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="../Home/about.html">About</a></li>
+                <li><a href="../Home/contact.html">Contact</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="../User/login.html" class="btn btn-secondary" id="loginBtn">Login</a>
+                <a href="../User/register.html" class="btn btn-primary" id="registerBtn">Register</a>
+                <div id="userMenu" style="display: none;"></div>
+                <a href="cart.html" class="btn btn-primary">
+                    Cart (<span id="cartCount">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="height: 200px;">
+        <div class="hero-content">
+            <h1>All Medicines</h1>
+            <p>Browse our complete collection of pharmaceutical products</p>
+        </div>
+    </section>
+
+    <!-- Filters and Search -->
+    <section class="container">
+        <div class="card" style="margin: 2rem 0;">
+            <div class="card-content">
+                <div class="grid grid-2">
+                    <div>
+                        <h3>Search & Filter</h3>
+                        <form class="search-bar" id="searchForm">
+                            <input type="text" id="searchInput" placeholder="Search medicines...">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h3>Sort By</h3>
+                        <select id="sortSelect" class="form-control" onchange="sortProducts(this.value)">
+                            <option value="name">Name A-Z</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem;">
+                    <h3>Filter by Category</h3>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                        <button class="btn btn-secondary" onclick="filterProducts('all')">All</button>
+                        <button class="btn btn-secondary" onclick="filterProducts('tablets')">Tablets</button>
+                        <button class="btn btn-secondary" onclick="filterProducts('syrups')">Syrups</button>
+                        <button class="btn btn-secondary" onclick="filterProducts('injections')">Injections</button>
+                        <button class="btn btn-secondary" onclick="filterProducts('otc')">OTC Products</button>
+                        <button class="btn btn-secondary" onclick="filterProducts('vitamins')">Vitamins</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="container">
+        <div class="products-grid grid grid-3">
+            <!-- Product 1 -->
+            <div class="card product-card" data-category="tablets" data-price="15.99" data-name="Paracetamol 500mg">
+                <img src="../../images/paracetamol1.jpeg" alt="Paracetamol 500mg" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Paracetamol 500mg</h3>
+                    <p class="card-text">Pain relief and fever reducer. 100 tablets per bottle.</p>
+                    <div class="price">$15.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="1" 
+                            data-product-name="Paracetamol 500mg" 
+                            data-product-price="15.99" 
+                            data-product-image="../../images/paracetamol.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="card product-card" data-category="syrups" data-price="12.50" data-name="Cough Syrup">
+                <img src="../../images/cough1.jpeg" alt="Cough Syrup" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Cough Syrup</h3>
+                    <p class="card-text">Relieves cough and throat irritation. 100ml bottle.</p>
+                    <div class="price">$12.50</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="2" 
+                            data-product-name="Cough Syrup" 
+                            data-product-price="12.50" 
+                            data-product-image="../../images/coughsyrup.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="card product-card" data-category="otc" data-price="8.99" data-name="Vitamin D3">
+                <img src="../../images/vitaminD3(1).jpeg" alt="Vitamin D3" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Vitamin D3</h3>
+                    <p class="card-text">Essential vitamin for bone health. 60 capsules.</p>
+                    <div class="price">$8.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="3" 
+                            data-product-name="Vitamin D3" 
+                            data-product-price="8.99" 
+                            data-product-image="../../images/vitaminD3.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="card product-card" data-category="tablets" data-price="22.99" data-name="Ibuprofen 400mg">
+                <img src="../../images/ibuprofen.jpeg" alt="Ibuprofen 400mg" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Ibuprofen 400mg</h3>
+                    <p class="card-text">Anti-inflammatory pain relief. 50 tablets.</p>
+                    <div class="price">$22.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="4" 
+                            data-product-name="Ibuprofen 400mg" 
+                            data-product-price="22.99" 
+                            data-product-image="../../images/ibuprofen.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="card product-card" data-category="syrups" data-price="18.75" data-name="Antacid Syrup">
+                <img src="../../images/antacidsyrup.jpeg" alt="Antacid Syrup" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Antacid Syrup</h3>
+                    <p class="card-text">Relieves heartburn and indigestion. 200ml bottle.</p>
+                    <div class="price">$18.75</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="5" 
+                            data-product-name="Antacid Syrup" 
+                            data-product-price="18.75" 
+                            data-product-image="../../images/antacidsyrup.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="card product-card" data-category="vitamins" data-price="14.99" data-name="Multivitamin">
+                <img src="../../images/multivitamin1.jpeg" alt="Multivitamin" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Multivitamin</h3>
+                    <p class="card-text">Complete daily vitamin supplement. 90 tablets.</p>
+                    <div class="price">$14.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="6" 
+                            data-product-name="Multivitamin" 
+                            data-product-price="14.99" 
+                            data-product-image="../../images/multivitamin.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="card product-card" data-category="injections" data-price="45.99" data-name="Insulin Pen">
+                <img src="../../images/insulinpen.jpeg" alt="Insulin Pen" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Insulin Pen</h3>
+                    <p class="card-text">Pre-filled insulin pen for diabetes management.</p>
+                    <div class="price">$45.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="7" 
+                            data-product-name="Insulin Pen" 
+                            data-product-price="45.99" 
+                            data-product-image="../../images/insulinpen.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="card product-card" data-category="otc" data-price="6.99" data-name="Band-Aids">
+                <img src="../../images/bandaids.jpeg" alt="Band-Aids" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Band-Aids</h3>
+                    <p class="card-text">Waterproof adhesive bandages. 100 count box.</p>
+                    <div class="price">$6.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="8" 
+                            data-product-name="Band-Aids" 
+                            data-product-price="6.99" 
+                            data-product-image="../../images/bandaids.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="card product-card" data-category="tablets" data-price="35.99" data-name="Blood Pressure Medication">
+                <img src="../../images/bloodpressure.jpeg" alt="Blood Pressure Medication" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Blood Pressure Medication</h3>
+                    <p class="card-text">Prescription medication for hypertension. 30 tablets.</p>
+                    <div class="price">$35.99</div>
+                    <button class="btn btn-primary add-to-cart" 
+                            data-product-id="9" 
+                            data-product-name="Blood Pressure Medication" 
+                            data-product-price="35.99" 
+                            data-product-image="../../images/bloodpressure.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="text-center" style="margin: 3rem 0;">
+            <div style="display: inline-flex; gap: 0.5rem;">
+                <button class="btn btn-secondary">Previous</button>
+                <button class="btn btn-primary">1</button>
+                <button class="btn btn-secondary">2</button>
+                <button class="btn btn-secondary">3</button>
+                <button class="btn btn-secondary">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prescription Upload CTA -->
+    <section class="container">
+        <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin: 4rem 0;">
+            <div class="card-content text-center">
+                <h2>Need Prescription Medicines?</h2>
+                <p>Upload your prescription and get your medicines delivered safely to your doorstep.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="../User/prescriptions.html" class="btn btn-primary">Upload Prescription</a>
+                    <a href="../User/login.html" class="btn btn-secondary">Login to Continue</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare</h3>
+                    <p>Your trusted online pharmacy for all your healthcare needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="../Home/index.html">Home</a>
+                    <a href="medicines.html">Medicines</a>
+                    <a href="categories.html">Categories</a>
+                    <a href="../Home/about.html">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Care</h3>
+                    <a href="../Home/contact.html">Contact Us</a>
+                    <a href="../User/login.html">My Account</a>
+                    <a href="../User/orders.html">Order Tracking</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Assets/js/main.js"></script>
+</body>
+</html>

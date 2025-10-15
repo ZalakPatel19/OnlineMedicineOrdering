@@ -1,0 +1,205 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="about.aspx.cs" Inherits="Online_Medicine_Ordering.Home.about" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - MediCare</title>
+        <link rel="stylesheet" href="../Assets/css/style.css">
+        <link rel="icon" href="../Assets/images/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.aspx" class="logo">MediCare</a>
+            <ul class="nav-links">
+                <li><a href="index.aspx">Home</a></li>
+                <li><a href="../Shop/medicines.aspx">Medicines</a></li>
+                <li><a href="../Shop/categories.aspx">Categories</a></li>
+                <li><a href="about.aspx">About</a></li>
+                <li><a href="contact.aspx">Contact</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="../User/login.aspx" class="btn btn-secondary" id="loginBtn">Login</a>
+                <a href="../User/register.aspx" class="btn btn-primary" id="registerBtn">Register</a>
+                <div id="userMenu" style="display: none;"></div>
+                <a href="../Shop/cart.aspx" class="btn btn-primary">Cart (<span id="cartCount">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: 300px;">
+        <div class="hero-content">
+            <h1>About MediCare</h1>
+            <p>Your trusted partner in healthcare</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="container">
+        <div class="grid grid-2" style="margin: 4rem 0;">
+            <div>
+                <h2>Our Mission</h2>
+                <p>At MediCare, we believe that access to quality healthcare should be convenient, reliable, and affordable. Our mission is to bridge the gap between patients and essential medicines by providing a seamless online platform that ensures timely delivery of authentic pharmaceutical products.</p>
+
+                <h3>What We Do</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Provide authentic medicines from licensed pharmacies</li>
+                    <li>Offer prescription upload and verification services</li>
+                    <li>Ensure fast and secure delivery to your doorstep</li>
+                    <li>Maintain strict quality control and safety standards</li>
+                    <li>Provide 24/7 customer support</li>
+                </ul>
+            </div>
+            <div>
+                <img src="../../images/ourmission.jpeg" alt="Our Pharmacy" style="width: 100%; border-radius: 10px;">
+            </div>
+        </div>
+
+        <div class="card" style="margin: 2rem 0;">
+            <div class="card-content">
+                <h2 class="text-center">Our Story</h2>
+                <p>Founded in 2020, MediCare started as a small initiative to make healthcare more accessible during the challenging times of the pandemic. What began as a local service has now grown into a trusted online pharmacy serving thousands of customers across the region.</p>
+
+                <p>Our journey has been guided by a simple principle: every person deserves access to quality healthcare, regardless of their location or circumstances. This belief drives us to continuously improve our services and expand our reach to serve more communities.</p>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <h2 class="text-center mb-4">Meet Our Team</h2>
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <img src="../../images/Docter.jpeg" alt="Dr. Sarah Johnson" class="card-img" style="height: 200px; object-fit: cover;">
+                <div class="card-content">
+                    <h3 class="card-title">Dr. Sarah Johnson</h3>
+                    <p class="card-text">Chief Medical Officer</p>
+                    <p>Licensed pharmacist with 15+ years of experience in pharmaceutical care and patient counseling.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <img src="../../images/docter2.jpeg" alt="Dr. Michael Chen" class="card-img" style="height: 200px; object-fit: cover;">
+                <div class="card-content">
+                    <h3 class="card-title">Dr. Michael Chen</h3>
+                    <p class="card-text">Head of Quality Assurance</p>
+                    <p>Expert in pharmaceutical quality control and regulatory compliance with extensive industry experience.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <img src="../../images/docter3.jpeg" alt="Dr. Emily Rodriguez" class="card-img" style="height: 200px; object-fit: cover;">
+                <div class="card-content">
+                    <h3 class="card-title">Dr. Emily Rodriguez</h3>
+                    <p class="card-text">Customer Care Director</p>
+                    <p>Dedicated to ensuring exceptional customer experience and patient safety in all our services.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Values Section -->
+        <div class="card" style="margin: 4rem 0;">
+            <div class="card-content">
+                <h2 class="text-center">Our Values</h2>
+                <div class="grid grid-2">
+                    <div>
+                        <h3>🔒 Safety First</h3>
+                        <p>We prioritize patient safety above all else, ensuring all medicines are authentic and properly stored.</p>
+
+                        <h3>🤝 Trust & Transparency</h3>
+                        <p>We maintain complete transparency in our operations and build trust through honest communication.</p>
+                    </div>
+                    <div>
+                        <h3>💡 Innovation</h3>
+                        <p>We continuously embrace technology to improve our services and enhance customer experience.</p>
+
+                        <h3>❤️ Compassion</h3>
+                        <p>We understand the importance of healthcare and approach every interaction with empathy and care.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <h2 class="text-center mb-4">Certifications & Licenses</h2>
+        <div class="grid grid-4">
+            <div class="card text-center">
+                <div class="card-content">
+                    <h3>🏥 FDA Approved</h3>
+                    <p>All medicines are FDA approved and sourced from licensed manufacturers.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-content">
+                    <h3>🔐 HIPAA Compliant</h3>
+                    <p>We maintain strict patient privacy and data security standards.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-content">
+                    <h3>✅ Licensed Pharmacy</h3>
+                    <p>Fully licensed pharmacy with certified pharmacists on staff.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-content">
+                    <h3>🛡️ Quality Assured</h3>
+                    <p>Regular quality audits and compliance with industry standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container">
+        <div class="card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin: 4rem 0;">
+            <div class="card-content">
+                <h2>Ready to Experience Better Healthcare?</h2>
+                <p>Join thousands of satisfied customers who trust MediCare for their healthcare needs.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="../User/register.html" class="btn btn-primary" style="margin-right: 1rem;">Get Started</a>
+                    <a href="../Shop/medicines.html" class="btn btn-secondary">Browse Medicines</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare</h3>
+                    <p>Your trusted online pharmacy for all your healthcare needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.aspx">Home</a>
+                    <a href="../Shop/medicines.aspx">Medicines</a>
+                    <a href="../Shop/categories.aspx">Categories</a>
+                    <a href="about.aspx">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Care</h3>
+                    <a href="contact.aspx">Contact Us</a>
+                    <a href="../User/login.aspx">My Account</a>
+                    <a href="../User/orders.aspx">Order Tracking</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Assets/js/main.js"></script>
+  
+</asp:Content>
