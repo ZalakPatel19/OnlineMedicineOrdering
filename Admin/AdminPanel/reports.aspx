@@ -1,0 +1,326 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeFile="reports.aspx.cs" Inherits="Online_Medicine_Ordering.Admin.AdminPanel.reports" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Pharmacy Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-pills"></i> Pharmacy Admin</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.aspx"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="medicines.aspx"><i class="fas fa-pills"></i> Medicines</a></li>
+                <li><a href="categories.aspx"><i class="fas fa-tags"></i> Categories</a></li>
+                <li><a href="orders.aspx"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                <li><a href="prescriptions.aspx"><i class="fas fa-file-medical"></i> Prescriptions</a></li>
+                <li><a href="users.aspx"><i class="fas fa-users"></i> Users</a></li>
+                <li class="active"><a href="reports.aspx"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                <li><a href="settings.aspx"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1>Reports & Analytics</h1>
+                    <p>Sales, inventory, and performance reports</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-primary" onclick="exportReport()">
+                        <i class="fas fa-download"></i> Export Report
+                    </button>
+                </div>
+            </header>
+
+            <!-- Report Filters -->
+            <div class="report-filters">
+                <div class="filter-group">
+                    <label for="reportType">Report Type</label>
+                    <select id="reportType" onchange="updateReport()">
+                        <option value="sales">Sales Report</option>
+                        <option value="inventory">Inventory Report</option>
+                        <option value="customers">Customer Report</option>
+                        <option value="prescriptions">Prescription Report</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="dateRange">Date Range</label>
+                    <select id="dateRange" onchange="updateReport()">
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month" selected>This Month</option>
+                        <option value="quarter">This Quarter</option>
+                        <option value="year">This Year</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <div class="filter-group" id="customDateRange" style="display: none;">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate">
+                </div>
+                <div class="filter-group">
+                    <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+                </div>
+            </div>
+
+            <!-- Report Summary Cards -->
+            <div class="report-summary">
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Total Revenue</h3>
+                        <p class="summary-value">$45,678</p>
+                        <span class="summary-change positive">+15% vs last month</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Total Orders</h3>
+                        <p class="summary-value">1,234</p>
+                        <span class="summary-change positive">+12% vs last month</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>New Customers</h3>
+                        <p class="summary-value">89</p>
+                        <span class="summary-change positive">+8% vs last month</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Medicines Sold</h3>
+                        <p class="summary-value">5,678</p>
+                        <span class="summary-change positive">+20% vs last month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container large">
+                    <h3>Sales Trend</h3>
+                    <canvas id="salesTrendChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Top Categories</h3>
+                    <canvas id="categoriesChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Order Status Distribution</h3>
+                    <canvas id="orderStatusChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Detailed Reports -->
+            <div class="reports-section">
+                <div class="report-tabs">
+                    <button class="tab-btn active" onclick="showTab('sales')">Sales Report</button>
+                    <button class="tab-btn" onclick="showTab('inventory')">Inventory Report</button>
+                    <button class="tab-btn" onclick="showTab('customers')">Customer Report</button>
+                    <button class="tab-btn" onclick="showTab('prescriptions')">Prescription Report</button>
+                </div>
+
+                <div id="salesReport" class="report-content active">
+                    <h3>Sales Report</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Orders</th>
+                                    <th>Revenue</th>
+                                    <th>Avg Order Value</th>
+                                    <th>Growth</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jan 15, 2024</td>
+                                    <td>45</td>
+                                    <td>$2,345</td>
+                                    <td>$52.11</td>
+                                    <td><span class="growth positive">+12%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jan 14, 2024</td>
+                                    <td>38</td>
+                                    <td>$1,987</td>
+                                    <td>$52.29</td>
+                                    <td><span class="growth positive">+8%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jan 13, 2024</td>
+                                    <td>52</td>
+                                    <td>$2,678</td>
+                                    <td>$51.50</td>
+                                    <td><span class="growth positive">+15%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="inventoryReport" class="report-content">
+                    <h3>Inventory Report</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <th>Category</th>
+                                    <th>Current Stock</th>
+                                    <th>Sold This Month</th>
+                                    <th>Stock Value</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Paracetamol 500mg</td>
+                                    <td>Pain Relief</td>
+                                    <td>245</td>
+                                    <td>89</td>
+                                    <td>$1,470</td>
+                                    <td><span class="status in-stock">In Stock</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Amoxicillin 250mg</td>
+                                    <td>Antibiotic</td>
+                                    <td>12</td>
+                                    <td>45</td>
+                                    <td>$156</td>
+                                    <td><span class="status low-stock">Low Stock</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Vitamin D3 1000IU</td>
+                                    <td>Vitamin</td>
+                                    <td>0</td>
+                                    <td>23</td>
+                                    <td>$0</td>
+                                    <td><span class="status out-of-stock">Out of Stock</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="customersReport" class="report-content">
+                    <h3>Customer Report</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Total Orders</th>
+                                    <th>Total Spent</th>
+                                    <th>Last Order</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>15</td>
+                                    <td>$1,245</td>
+                                    <td>Jan 15, 2024</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>8</td>
+                                    <td>$567</td>
+                                    <td>Jan 10, 2024</td>
+                                    <td><span class="status active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Johnson</td>
+                                    <td>3</td>
+                                    <td>$234</td>
+                                    <td>Dec 20, 2023</td>
+                                    <td><span class="status inactive">Inactive</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="prescriptionsReport" class="report-content">
+                    <h3>Prescription Report</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Total Prescriptions</th>
+                                    <th>Approved</th>
+                                    <th>Rejected</th>
+                                    <th>Pending</th>
+                                    <th>Approval Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jan 15, 2024</td>
+                                    <td>12</td>
+                                    <td>10</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>83.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>Jan 14, 2024</td>
+                                    <td>8</td>
+                                    <td>7</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>87.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Jan 13, 2024</td>
+                                    <td>15</td>
+                                    <td>12</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>80.0%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+</asp:Content>

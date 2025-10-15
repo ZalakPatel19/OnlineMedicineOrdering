@@ -1,0 +1,252 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeFile="prescriptions.aspx.cs" Inherits="Online_Medicine_Ordering.Admin.AdminPanel.prescriptions" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prescriptions Management - Pharmacy Admin</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    </head>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <body>
+        <div class="admin-container">
+            <!-- Sidebar -->
+            <nav class="sidebar">
+                <div class="sidebar-header">
+                    <h2><i class="fas fa-pills"></i>Medicine Admin</h2>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.aspx"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                    <li><a href="medicines.aspx"><i class="fas fa-pills"></i>Medicines</a></li>
+                    <li><a href="categories.aspx"><i class="fas fa-tags"></i>Categories</a></li>
+                    <li><a href="orders.aspx"><i class="fas fa-shopping-cart"></i>Orders</a></li>
+                    <li class="active"><a href="prescriptions.aspx"><i class="fas fa-file-medical"></i>Prescriptions</a></li>
+                    <li><a href="users.aspx"><i class="fas fa-users"></i>Users</a></li>
+                    <li><a href="reports.aspx"><i class="fas fa-chart-bar"></i>Reports</a></li>
+                    <li><a href="settings.aspx"><i class="fas fa-cog"></i>Settings</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <header class="header">
+                    <div class="header-left">
+                        <h1>Prescriptions Management</h1>
+                        <p>Review and process uploaded prescriptions</p>
+                    </div>
+                    <div class="header-right">
+                        <div class="header-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Pending:</span>
+                                <span class="stat-value pending">8</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Approved:</span>
+                                <span class="stat-value approved">24</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Rejected:</span>
+                                <span class="stat-value rejected">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Filters -->
+                <div class="filters-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="prescriptionSearch" placeholder="Search prescriptions...">
+                    </div>
+                    <div class="filter-group">
+                        <select id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="processed">Processed</option>
+                        </select>
+                        <input type="date" id="dateFilter" placeholder="Filter by date">
+                        <button class="btn btn-secondary" onclick="clearFilters()">Clear Filters</button>
+                    </div>
+                </div>
+
+                <!-- Prescriptions Grid -->
+                <div class="prescriptions-grid">
+                    <div class="prescription-card">
+                        <div class="prescription-header">
+                            <div class="prescription-info">
+                                <h3>Prescription #PRS-001</h3>
+                                <p class="customer-name">John Doe</p>
+                                <p class="upload-date">Uploaded: Jan 15, 2024</p>
+                            </div>
+                            <div class="prescription-status">
+                                <span class="status pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="prescription-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Prescription" onclick="viewPrescription(1)">
+                        </div>
+                        <div class="prescription-actions">
+                            <button class="btn btn-sm btn-success" onclick="approvePrescription(1)">Approve</button>
+                            <button class="btn btn-sm btn-danger" onclick="rejectPrescription(1)">Reject</button>
+                            <button class="btn btn-sm btn-primary" onclick="viewPrescription(1)">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="prescription-card">
+                        <div class="prescription-header">
+                            <div class="prescription-info">
+                                <h3>Prescription #PRS-002</h3>
+                                <p class="customer-name">Jane Smith</p>
+                                <p class="upload-date">Uploaded: Jan 14, 2024</p>
+                            </div>
+                            <div class="prescription-status">
+                                <span class="status approved">Approved</span>
+                            </div>
+                        </div>
+                        <div class="prescription-image">
+                            <img src="/images/prescription.jpeg/300x200" alt="Prescription" onclick="viewPrescription(2)">
+                        </div>
+                        <div class="prescription-actions">
+                            <button class="btn btn-sm btn-primary" onclick="viewPrescription(2)">View Details</button>
+                            <button class="btn btn-sm btn-secondary" onclick="processPrescription(2)">Process Order</button>
+                        </div>
+                    </div>
+
+                    <div class="prescription-card">
+                        <div class="prescription-header">
+                            <div class="prescription-info">
+                                <h3>Prescription #PRS-003</h3>
+                                <p class="customer-name">Mike Johnson</p>
+                                <p class="upload-date">Uploaded: Jan 13, 2024</p>
+                            </div>
+                            <div class="prescription-status">
+                                <span class="status rejected">Rejected</span>
+                            </div>
+                        </div>
+                        <div class="prescription-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Prescription" onclick="viewPrescription(3)">
+                        </div>
+                        <div class="prescription-actions">
+                            <button class="btn btn-sm btn-primary" onclick="viewPrescription(3)">View Details</button>
+                            <button class="btn btn-sm btn-warning" onclick="reconsiderPrescription(3)">Reconsider</button>
+                        </div>
+                    </div>
+
+                    <div class="prescription-card">
+                        <div class="prescription-header">
+                            <div class="prescription-info">
+                                <h3>Prescription #PRS-004</h3>
+                                <p class="customer-name">Sarah Wilson</p>
+                                <p class="upload-date">Uploaded: Jan 12, 2024</p>
+                            </div>
+                            <div class="prescription-status">
+                                <span class="status processed">Processed</span>
+                            </div>
+                        </div>
+                        <div class="prescription-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Prescription" onclick="viewPrescription(4)">
+                        </div>
+                        <div class="prescription-actions">
+                            <button class="btn btn-sm btn-primary" onclick="viewPrescription(4)">View Details</button>
+                            <button class="btn btn-sm btn-info" onclick="viewOrder(4)">View Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="btn btn-sm" disabled>Previous</button>
+                    <span class="page-info">Page 1 of 5</span>
+                    <button class="btn btn-sm">Next</button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Prescription Details Modal -->
+        <div id="prescriptionModal" class="modal">
+            <div class="modal-content large">
+                <div class="modal-header">
+                    <h2>Prescription Details - #PRS-001</h2>
+                    <span class="close" onclick="closePrescriptionModal()">&times;</span>
+                </div>
+                <div class="prescription-details">
+                    <div class="prescription-image-large">
+                        <img src="https://via.placeholder.com/600x400" alt="Prescription" id="prescriptionImage">
+                    </div>
+                    <div class="prescription-info">
+                        <div class="info-section">
+                            <h3>Customer Information</h3>
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Email:</strong> john@example.com</p>
+                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                            <p><strong>Date of Birth:</strong> January 1, 1990</p>
+                        </div>
+                        <div class="info-section">
+                            <h3>Prescription Information</h3>
+                            <p><strong>Doctor:</strong> Dr. Smith</p>
+                            <p><strong>Date:</strong> January 10, 2024</p>
+                            <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+                            <p><strong>Upload Date:</strong> January 15, 2024</p>
+                        </div>
+                        <div class="info-section">
+                            <h3>Medicines Prescribed</h3>
+                            <ul>
+                                <li>Paracetamol 500mg - 2 tablets daily</li>
+                                <li>Ibuprofen 400mg - 1 tablet as needed</li>
+                                <li>Amoxicillin 250mg - 1 tablet twice daily</li>
+                            </ul>
+                        </div>
+                        <div class="prescription-actions">
+                            <button class="btn btn-success" onclick="approvePrescription(1)">Approve</button>
+                            <button class="btn btn-danger" onclick="rejectPrescription(1)">Reject</button>
+                            <button class="btn btn-primary" onclick="downloadPrescription(1)">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rejection Modal -->
+        <div id="rejectionModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Reject Prescription</h2>
+                    <span class="close" onclick="closeRejectionModal()">&times;</span>
+                </div>
+                <form id="rejectionForm">
+                    <div class="form-group">
+                        <label for="rejectionReason">Reason for Rejection</label>
+                        <select id="rejectionReason" required>
+                            <option value="">Select Reason</option>
+                            <option value="unclear">Unclear prescription</option>
+                            <option value="expired">Expired prescription</option>
+                            <option value="invalid">Invalid doctor signature</option>
+                            <option value="missing-info">Missing information</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="rejectionNote">Additional Notes</label>
+                        <textarea id="rejectionNote" rows="4" placeholder="Please provide additional details..."></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeRejectionModal()">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Reject Prescription</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
+</asp:Content>
