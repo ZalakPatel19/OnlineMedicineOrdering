@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories Management - Pharmacy Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-pills"></i> Pharmacy Admin</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="medicines.html"><i class="fas fa-pills"></i> Medicines</a></li>
+                <li class="active"><a href="categories.html"><i class="fas fa-tags"></i> Categories</a></li>
+                <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                <li><a href="prescriptions.html"><i class="fas fa-file-medical"></i> Prescriptions</a></li>
+                <li><a href="users.html"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1>Categories Management</h1>
+                    <p>Organize your medicines by categories</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-primary" onclick="openCategoryModal()">
+                        <i class="fas fa-plus"></i> Add Category
+                    </button>
+                </div>
+            </header>
+
+            <!-- Categories Grid -->
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Pain Relief</h3>
+                        <p>45 medicines</p>
+                        <div class="category-actions">
+                            <button class="btn btn-sm btn-primary" onclick="editCategory(1)">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteCategory(1)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Antibiotic</h3>
+                        <p>23 medicines</p>
+                        <div class="category-actions">
+                            <button class="btn btn-sm btn-primary" onclick="editCategory(2)">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteCategory(2)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Vitamin</h3>
+                        <p>67 medicines</p>
+                        <div class="category-actions">
+                            <button class="btn btn-sm btn-primary" onclick="editCategory(3)">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteCategory(3)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Cold & Flu</h3>
+                        <p>34 medicines</p>
+                        <div class="category-actions">
+                            <button class="btn btn-sm btn-primary" onclick="editCategory(4)">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteCategory(4)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Eye Care</h3>
+                        <p>12 medicines</p>
+                        <div class="category-actions">
+                            <button class="btn btn-sm btn-primary" onclick="editCategory(5)">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteCategory(5)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Add New Category</h3>
+                        <p>Click to create</p>
+                        <div class="category-actions">
+                            <button class="btn btn-sm btn-primary" onclick="openCategoryModal()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Category Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="categoryModalTitle">Add Category</h2>
+                <span class="close" onclick="closeCategoryModal()">&times;</span>
+            </div>
+            <form id="categoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Category Name</label>
+                    <input type="text" id="categoryName" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoryDescription">Description</label>
+                    <textarea id="categoryDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="categoryIcon">Icon Class (FontAwesome)</label>
+                    <input type="text" id="categoryIcon" placeholder="fas fa-pills">
+                </div>
+                <div class="form-group">
+                    <label for="categoryColor">Color</label>
+                    <input type="color" id="categoryColor" value="#007bff">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeCategoryModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
