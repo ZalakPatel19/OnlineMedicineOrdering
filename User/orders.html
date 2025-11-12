@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - MediCare</title>
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="icon" href="../Assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../Home/index.html" class="logo">MediCare</a>
+            <ul class="nav-links">
+                <li><a href="../Home/index.html">Home</a></li>
+                <li><a href="../Shop/medicines.html">Medicines</a></li>
+                <li><a href="../Shop/categories.html">Categories</a></li>
+                <li><a href="../Home/about.html">About</a></li>
+                <li><a href="../Home/contact.html">Contact</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="login.html" class="btn btn-secondary" id="loginBtn">Login</a>
+                <a href="register.html" class="btn btn-primary" id="registerBtn">Register</a>
+                <div id="userMenu" style="display: none;"></div>
+                <a href="../Shop/cart.html" class="btn btn-primary">
+                    Cart (<span id="cartCount">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="height: 200px;">
+        <div class="hero-content">
+            <h1>My Orders</h1>
+            <p>Track your orders and view order history</p>
+        </div>
+    </section>
+
+    <!-- Orders Content -->
+    <section class="container">
+        <!-- Order Filters -->
+        <div class="card" style="margin: 2rem 0;">
+            <div class="card-content">
+                <div class="grid grid-2">
+                    <div>
+                        <h3>Filter Orders</h3>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-secondary" onclick="filterOrders('all')">All Orders</button>
+                            <button class="btn btn-secondary" onclick="filterOrders('pending')">Pending</button>
+                            <button class="btn btn-secondary" onclick="filterOrders('processing')">Processing</button>
+                            <button class="btn btn-secondary" onclick="filterOrders('shipped')">Shipped</button>
+                            <button class="btn btn-secondary" onclick="filterOrders('delivered')">Delivered</button>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Search Orders</h3>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                            <input type="text" id="orderSearch" placeholder="Search by order ID or product name" class="form-control">
+                            <button onclick="searchOrders()" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders List -->
+        <div id="ordersList">
+            <!-- Orders will be populated by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyOrders" style="display: none; text-align: center; padding: 4rem;">
+            <h3>No Orders Found</h3>
+            <p style="color: #666; margin: 1rem 0;">You haven't placed any orders yet.</p>
+            <a href="../Shop/medicines.html" class="btn btn-primary">Start Shopping</a>
+        </div>
+    </section>
+
+    <!-- Order Details Modal -->
+    <div id="orderDetailsModal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <span class="close" onclick="closeModal('orderDetailsModal')">&times;</span>
+            <h2>Order Details</h2>
+            <div id="orderDetailsContent">
+                <!-- Order details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare</h3>
+                    <p>Your trusted online pharmacy for all your healthcare needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="../Home/index.html">Home</a>
+                    <a href="../Shop/medicines.html">Medicines</a>
+                    <a href="../Shop/categories.html">Categories</a>
+                    <a href="../Home/about.html">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Care</h3>
+                    <a href="../Home/contact.html">Contact Us</a>
+                    <a href="profile.html">My Account</a>
+                    <a href="orders.html">Order Tracking</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Assets/js/main.js"></script>
+    <script>
+        let allOrders = [];
+        let filteredOrders = [];
+
+        // Load orders
+        function loadOrders() {
+            if (!user) {
+                showAlert('Please login to view your orders', 'warning');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1500);
+                return;
+            }
+
+            allOrders = JSON.parse(localStorage.getItem('orders')) || [];
+            filteredOrders = allOrders.filter(order => order.userId === user.id);
+            
+            if (filteredOrders.length === 0) {
+                document.getElementById('ordersList').style.display = 'none';
+                document.getElementById('emptyOrders').style.display = 'block';
+                return;
+            }
+
+            renderOrders(filteredOrders);
+        }
+
+        // Render orders
+        function renderOrders(orders) {
+            const ordersList = document.getElementById('ordersList');
+            
+            ordersList.innerHTML = orders.map(order => `
+                <div class="card" style="margin: 1rem 0;">
+                    <div class="card-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <h3>Order #${order.id}</h3>
+                                <p style="color: #666;">Placed on ${formatDate(order.date)}</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 1.2rem; font-weight: bold; color: #007bff;">$${order.total.toFixed(2)}</div>
+                                <div style="padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.9rem; background: ${getStatusColor(order.status)}; color: white;">
+                                    ${order.status.toUpperCase()}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 1rem 0;">
+                            <h4>Items (${order.items.length})</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0;">
+                                ${order.items.map(item => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; background: #f8f9fa; padding: 0.5rem; border-radius: 5px;">
+                                        <img src="${item.image}" alt="${item.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 3px;">
+                                        <div>
+                                            <div style="font-weight: 500; font-size: 0.9rem;">${item.name}</div>
+                                            <div style="color: #666; font-size: 0.8rem;">Qty: ${item.quantity}</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e9ecef;">
+                            <div>
+                                <p style="margin: 0.25rem 0;"><strong>Shipping to:</strong> ${order.shippingAddress.firstName} ${order.shippingAddress.lastName}</p>
+                                <p style="margin: 0.25rem 0; color: #666;">${order.shippingAddress.address}, ${order.shippingAddress.city}, ${order.shippingAddress.state} ${order.shippingAddress.zipCode}</p>
+                            </div>
+                            <div>
+                                <button onclick="viewOrderDetails(${order.id})" class="btn btn-primary">View Details</button>
+                                ${order.status === 'delivered' ? '<button onclick="reorderItems(' + order.id + ')" class="btn btn-secondary" style="margin-left: 0.5rem;">Reorder</button>' : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Get status color
+        function getStatusColor(status) {
+            const colors = {
+                'pending': '#ffc107',
+                'processing': '#17a2b8',
+                'shipped': '#007bff',
+                'delivered': '#28a745',
+                'cancelled': '#dc3545'
+            };
+            return colors[status] || '#6c757d';
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Filter orders
+        function filterOrders(status) {
+            if (status === 'all') {
+                filteredOrders = allOrders.filter(order => order.userId === user.id);
+            } else {
+                filteredOrders = allOrders.filter(order => order.userId === user.id && order.status === status);
+            }
+            
+            if (filteredOrders.length === 0) {
+                document.getElementById('ordersList').innerHTML = '<div class="card"><div class="card-content text-center"><h3>No orders found</h3><p>No orders match your filter criteria.</p></div></div>';
+            } else {
+                renderOrders(filteredOrders);
+            }
+        }
+
+        // Search orders
+        function searchOrders() {
+            const searchTerm = document.getElementById('orderSearch').value.toLowerCase();
+            
+            if (!searchTerm) {
+                filteredOrders = allOrders.filter(order => order.userId === user.id);
+            } else {
+                filteredOrders = allOrders.filter(order => 
+                    order.userId === user.id && (
+                        order.id.toString().includes(searchTerm) ||
+                        order.items.some(item => item.name.toLowerCase().includes(searchTerm))
+                    )
+                );
+            }
+            
+            if (filteredOrders.length === 0) {
+                document.getElementById('ordersList').innerHTML = '<div class="card"><div class="card-content text-center"><h3>No orders found</h3><p>No orders match your search criteria.</p></div></div>';
+            } else {
+                renderOrders(filteredOrders);
+            }
+        }
+
+        // View order details
+        function viewOrderDetails(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+            
+            const modalContent = document.getElementById('orderDetailsContent');
+            modalContent.innerHTML = `
+                <div style="margin-bottom: 2rem;">
+                    <h3>Order #${order.id}</h3>
+                    <p style="color: #666;">Placed on ${formatDate(order.date)}</p>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
+                        <span style="padding: 0.5rem 1rem; border-radius: 15px; background: ${getStatusColor(order.status)}; color: white;">
+                            ${order.status.toUpperCase()}
+                        </span>
+                        <span style="font-size: 1.2rem; font-weight: bold;">$${order.total.toFixed(2)}</span>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4>Order Items</h4>
+                    <div style="border: 1px solid #e9ecef; border-radius: 5px; overflow: hidden;">
+                        ${order.items.map(item => `
+                            <div style="display: flex; align-items: center; padding: 1rem; border-bottom: 1px solid #e9ecef;">
+                                <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px; margin-right: 1rem;">
+                                <div style="flex: 1;">
+                                    <h5 style="margin: 0;">${item.name}</h5>
+                                    <p style="margin: 0.25rem 0; color: #666;">Quantity: ${item.quantity}</p>
+                                </div>
+                                <div style="font-weight: bold; color: #007bff;">$${(item.price * item.quantity).toFixed(2)}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4>Shipping Information</h4>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px;">
+                        <p style="margin: 0.25rem 0;"><strong>Name:</strong> ${order.shippingAddress.firstName} ${order.shippingAddress.lastName}</p>
+                        <p style="margin: 0.25rem 0;"><strong>Address:</strong> ${order.shippingAddress.address}</p>
+                        <p style="margin: 0.25rem 0;"><strong>City:</strong> ${order.shippingAddress.city}, ${order.shippingAddress.state} ${order.shippingAddress.zipCode}</p>
+                        <p style="margin: 0.25rem 0;"><strong>Country:</strong> ${order.shippingAddress.country}</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4>Contact Information</h4>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px;">
+                        <p style="margin: 0.25rem 0;"><strong>Email:</strong> ${order.contactInfo.email}</p>
+                        <p style="margin: 0.25rem 0;"><strong>Phone:</strong> ${order.contactInfo.phone}</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4>Payment Information</h4>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 5px;">
+                        <p style="margin: 0.25rem 0;"><strong>Payment Method:</strong> ${order.paymentMethod.toUpperCase()}</p>
+                        <p style="margin: 0.25rem 0;"><strong>Total Amount:</strong> $${order.total.toFixed(2)}</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="closeModal('orderDetailsModal')" class="btn btn-secondary">Close</button>
+                    ${order.status === 'delivered' ? '<button onclick="reorderItems(' + order.id + ')" class="btn btn-primary" style="margin-left: 1rem;">Reorder Items</button>' : ''}
+                </div>
+            `;
+            
+            openModal('orderDetailsModal');
+        }
+
+        // Reorder items
+        function reorderItems(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+            
+            // Add all items from the order to cart
+            order.items.forEach(item => {
+                addToCart(item.id, item.name, item.price, item.image);
+            });
+            
+            showAlert('Items added to cart!', 'success');
+            closeModal('orderDetailsModal');
+        }
+
+        // Initialize orders page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrders();
+        });
+    </script>
+</body>
+</html>
