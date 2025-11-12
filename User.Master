@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="Online_Medicine_Ordering.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>MediCare - Online Medicine Ordering System</title>
+                    <link rel="stylesheet" href="Assets/css/style.css">
+                    <style>
+                        .project-overview {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 2rem;
+                        }
+
+                        .project-header {
+                            text-align: center;
+                            margin-bottom: 3rem;
+                        }
+
+                            .project-header h1 {
+                                font-size: 3rem;
+                                color: #667eea;
+                                margin-bottom: 1rem;
+                            }
+
+                            .project-header p {
+                                font-size: 1.2rem;
+                                color: #666;
+                                margin-bottom: 2rem;
+                            }
+
+                        .quick-links {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                            gap: 2rem;
+                            margin: 3rem 0;
+                        }
+
+                        .quick-link-card {
+                            background: white;
+                            border-radius: 10px;
+                            padding: 2rem;
+                            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                            text-align: center;
+                            transition: transform 0.3s;
+                        }
+
+                            .quick-link-card:hover {
+                                transform: translateY(-5px);
+                            }
+
+                            .quick-link-card h3 {
+                                color: #333;
+                                margin-bottom: 1rem;
+                            }
+
+                            .quick-link-card p {
+                                color: #666;
+                                margin-bottom: 1.5rem;
+                            }
+
+                        .btn {
+                            display: inline-block;
+                            padding: 0.75rem 1.5rem;
+                            background: #007bff;
+                            color: white;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            transition: background 0.3s;
+                        }
+
+                            .btn:hover {
+                                background: #0056b3;
+                            }
+
+                        .features-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            gap: 1.5rem;
+                            margin: 3rem 0;
+                        }
+
+                        .feature-item {
+                            background: #f8f9fa;
+                            padding: 1.5rem;
+                            border-radius: 8px;
+                            text-align: center;
+                        }
+
+                            .feature-item h4 {
+                                color: #333;
+                                margin-bottom: 0.5rem;
+                            }
+
+                            .feature-item p {
+                                color: #666;
+                                font-size: 0.9rem;
+                            }
+                    </style>
+                </head>
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                <body>
+                    <div class="project-overview">
+                        <div class="project-header">
+                            <h1>🏥 MediCare</h1>
+                            <p>Complete Online Medicine Ordering System</p>
+                            <p>A comprehensive e-commerce solution for online pharmacy with prescription management, user authentication, and secure checkout.</p>
+                        </div>
+
+                        <div class="quick-links">
+                            <div class="quick-link-card">
+                                <h3>🏠 Homepage</h3>
+                                <p>Main landing page with featured medicines, categories, and company information.</p>
+                                <a href="Home/index.aspx" class="btn">View Homepage</a>
+                            </div>
+
+                            <div class="quick-link-card">
+                                <h3>🛒 Shop</h3>
+                                <p>Browse medicines, view categories, manage cart, and complete checkout.</p>
+                                <a href="Shop/medicines.aspx" class="btn">Browse Shop</a>
+                            </div>
+
+                            <div class="quick-link-card">
+                                <h3>👤 User Account</h3>
+                                <p>Login, register, manage profile, view orders, and upload prescriptions.</p>
+                                <a href="User/login.aspx" class="btn">User Portal</a>
+                            </div>
+
+                        </div>
+
+                        <%--<div class="features-grid">
+                            <div class="feature-item">
+                                <h4>💊 Medicine Catalog</h4>
+                                <p>Complete database of medicines with search and filtering</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🛒 Shopping Cart</h4>
+                                <p>Full cart functionality with quantity controls and checkout</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>👤 User Authentication</h4>
+                                <p>Secure login, registration, and profile management</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>📄 Prescription Upload</h4>
+                                <p>Upload and manage prescriptions for verification</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>📦 Order Management</h4>
+                                <p>Track orders and view complete order history</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>📱 Responsive Design</h4>
+                                <p>Mobile-friendly interface that works on all devices</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🔒 Security Features</h4>
+                                <p>Secure data handling and privacy protection</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>💳 Payment Processing</h4>
+                                <p>Multiple payment options with secure checkout</p>
+                            </div>
+                        </div>
+
+                        <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 3rem 0; text-align: center;">
+                            <h2>🚀 Getting Started</h2>
+                            <p>To run this project locally, simply open <code>Home/index.html</code> in your web browser or use a local development server.</p>
+                            <p><strong>Recommended:</strong> Use Live Server extension in VS Code for the best development experience.</p>
+                        </div>--%>
+            </asp:ContentPlaceHolder>
+           
+        </div>
+    </form>
+</body>
+</html>
