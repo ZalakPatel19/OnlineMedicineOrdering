@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MediCare</title>
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="icon" href="../Assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">MediCare</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="../Shop/medicines.html">Medicines</a></li>
+                <li><a href="../Shop/categories.html">Categories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="../User/login.html" class="btn btn-secondary" id="loginBtn">Login</a>
+                <a href="../User/register.html" class="btn btn-primary" id="registerBtn">Register</a>
+                <div id="userMenu" style="display: none;"></div>
+                <a href="../Shop/cart.html" class="btn btn-primary">
+                    Cart (<span id="cartCount">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: 300px;">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>We're here to help with all your healthcare needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="container">
+        <div class="grid grid-2" style="margin: 4rem 0;">
+            <!-- Contact Form -->
+            <div class="card">
+                <div class="card-content">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Support</option>
+                                <option value="prescription">Prescription Help</option>
+                                <option value="delivery">Delivery Issues</option>
+                                <option value="refund">Refund Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="card-content">
+                        <h2>Get in Touch</h2>
+                        <div style="margin: 1.5rem 0;">
+                            <h3>📞 Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p>+1 (555) 987-6543 (Emergency)</p>
+                        </div>
+                        <div style="margin: 1.5rem 0;">
+                            <h3>📧 Email</h3>
+                            <p>info@medicare.com</p>
+                            <p>support@medicare.com</p>
+                        </div>
+                        <div style="margin: 1.5rem 0;">
+                            <h3>📍 Address</h3>
+                            <p>123 Healthcare Street<br>
+                            Medical District<br>
+                            City, State 12345</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h2>Business Hours</h2>
+                        <div style="margin: 1rem 0;">
+                            <p><strong>Monday - Friday:</strong> 8:00 AM - 8:00 PM</p>
+                            <p><strong>Saturday:</strong> 9:00 AM - 6:00 PM</p>
+                            <p><strong>Sunday:</strong> 10:00 AM - 4:00 PM</p>
+                        </div>
+                        <div style="margin: 1rem 0;">
+                            <p><strong>Emergency Support:</strong> 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="card" style="margin: 2rem 0;">
+            <div class="card-content">
+                <h2 class="text-center">Our Location</h2>
+                <div style="background: #f0f0f0; height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 1rem 0;">
+                    <p style="color: #666; font-size: 1.2rem;">📍 Interactive Map Would Be Here</p>
+                </div>
+                <p class="text-center">Visit our pharmacy for in-person consultations and immediate medicine pickup.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="card" style="margin: 2rem 0;">
+            <div class="card-content">
+                <h2 class="text-center">Frequently Asked Questions</h2>
+                <div style="margin: 2rem 0;">
+                    <div style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h3>How do I upload my prescription?</h3>
+                        <p>You can upload your prescription through your account dashboard or during checkout. We accept PDF and image formats.</p>
+                    </div>
+                    <div style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h3>What are your delivery times?</h3>
+                        <p>We offer same-day delivery for orders placed before 2 PM. Standard delivery is 1-2 business days.</p>
+                    </div>
+                    <div style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h3>Do you deliver to my area?</h3>
+                        <p>We deliver to most areas within a 50-mile radius. Check your address during checkout to confirm delivery availability.</p>
+                    </div>
+                    <div style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                        <h3>How can I track my order?</h3>
+                        <p>You'll receive tracking information via email and SMS once your order is processed and shipped.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="../Pages/faq.html" class="btn btn-primary">View All FAQs</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="card" style="background: #fff3cd; border: 1px solid #ffeaa7; margin: 2rem 0;">
+            <div class="card-content">
+                <h2 class="text-center">🚨 Emergency Contact</h2>
+                <p class="text-center">For urgent medical needs or prescription emergencies, call our 24/7 hotline:</p>
+                <p class="text-center" style="font-size: 1.5rem; font-weight: bold; color: #856404;">+1 (555) 911-MED</p>
+                <p class="text-center">Our emergency team is available around the clock to assist with critical medication needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare</h3>
+                    <p>Your trusted online pharmacy for all your healthcare needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="../Shop/medicines.html">Medicines</a>
+                    <a href="../Shop/categories.html">Categories</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Care</h3>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="../User/login.html">My Account</a>
+                    <a href="../User/orders.html">Order Tracking</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../Assets/js/main.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                showAlert('Please fill in all required fields', 'danger');
+                return;
+            }
+            
+            // Simulate form submission
+            showAlert('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
