@@ -1,0 +1,418 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\shop\\medicines.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:shop\\medicines.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\shop\\medicines.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:shop\\medicines.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\medicines.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\medicines.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ADMIN_SOURCE_REPOS_ONLINE_MEDICINE_ORDERING_APP_DATA_MEDICINE_DB.MDF/True/SqlTable/dbo.Medicines_Admin_tbl.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\medicines.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\medicines.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\shop\\cart.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:shop\\cart.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\shop\\cart.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:shop\\cart.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ADMIN_SOURCE_REPOS_ONLINE_MEDICINE_ORDERING_APP_DATA_MEDICINE_DB.MDF/True/SqlTable/dbo.Medicines_tbl.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ADMIN_SOURCE_REPOS_ONLINE_MEDICINE_ORDERING_APP_DATA_MEDICINE_DB.MDF/True/SqlTable/dbo._Medicines_tbl.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|c:\\users\\admin\\source\\repos\\online_medicine_ordering\\admin\\adminpanel\\admin_login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\admin_login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\register_admin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\register_admin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\categories.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\categories.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\orders.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\orders.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\orders.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\orders.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\user\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:user\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\shop\\checkout.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:shop\\checkout.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\shop\\checkout.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:shop\\checkout.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\admin_login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\admin_login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\login_admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\login_admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\admin\\adminpanel\\categories.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:admin\\adminpanel\\categories.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\user\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{66EC89AE-7521-4816-8099-687FD03748CD}|Online_Medicine_Ordering.csproj|solutionrelative:user\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "medicines.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\medicines.aspx",
+              "RelativeDocumentMoniker": "Shop\\medicines.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\medicines.aspx",
+              "RelativeToolTip": "Shop\\medicines.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-09-23T04:37:54.184Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "medicines.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\medicines.aspx.cs",
+              "RelativeDocumentMoniker": "Shop\\medicines.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\medicines.aspx.cs",
+              "RelativeToolTip": "Shop\\medicines.aspx.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAQwKEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T04:38:14.159Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Medicines_Admin_tbl [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ADMIN_SOURCE_REPOS_ONLINE_MEDICINE_ORDERING_APP_DATA_MEDICINE_DB.MDF/True/SqlTable/dbo.Medicines_Admin_tbl.sql",
+              "ToolTip": "dbo.Medicines_Admin_tbl [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-12T04:18:26.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "cart.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\cart.aspx.cs",
+              "RelativeDocumentMoniker": "Shop\\cart.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\cart.aspx.cs",
+              "RelativeToolTip": "Shop\\cart.aspx.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAwCEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T15:49:14.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "medicines.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\medicines.aspx",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\medicines.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\medicines.aspx",
+              "RelativeToolTip": "Admin\\AdminPanel\\medicines.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-09-23T04:38:24.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "medicines.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\medicines.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\medicines.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\medicines.aspx.cs",
+              "RelativeToolTip": "Admin\\AdminPanel\\medicines.aspx.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAQwIQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T11:06:01.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "cart.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\cart.aspx",
+              "RelativeDocumentMoniker": "Shop\\cart.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\cart.aspx",
+              "RelativeToolTip": "Shop\\cart.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-10-07T15:47:22.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "dbo._Medicines_tbl [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ADMIN_SOURCE_REPOS_ONLINE_MEDICINE_ORDERING_APP_DATA_MEDICINE_DB.MDF/True/SqlTable/dbo._Medicines_tbl.sql",
+              "ToolTip": "dbo._Medicines_tbl [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-12T04:17:55.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "dbo.Medicines_tbl [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ADMIN_SOURCE_REPOS_ONLINE_MEDICINE_ORDERING_APP_DATA_MEDICINE_DB.MDF/True/SqlTable/dbo.Medicines_tbl.sql",
+              "ToolTip": "dbo.Medicines_tbl [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-12T04:18:11.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "admin_login.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\admin_login.aspx",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\admin_login.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\admin_login.aspx",
+              "RelativeToolTip": "Admin\\AdminPanel\\admin_login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-10-09T03:35:30.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "orders.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\orders.aspx",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\orders.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\orders.aspx",
+              "RelativeToolTip": "Admin\\AdminPanel\\orders.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-11T16:36:56.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "dashboard.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\dashboard.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\dashboard.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\dashboard.aspx.cs",
+              "RelativeToolTip": "Admin\\AdminPanel\\dashboard.aspx.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T03:42:38.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "register_admin.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\register_admin.aspx",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\register_admin.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\register_admin.aspx",
+              "RelativeToolTip": "Admin\\AdminPanel\\register_admin.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-11T16:57:16.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "categories.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\categories.aspx",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\categories.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\categories.aspx",
+              "RelativeToolTip": "Admin\\AdminPanel\\categories.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-10T11:09:10.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\dashboard.aspx",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\dashboard.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\dashboard.aspx",
+              "RelativeToolTip": "Admin\\AdminPanel\\dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-11T16:35:44.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "orders.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\orders.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\orders.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\orders.aspx.cs",
+              "RelativeToolTip": "Admin\\AdminPanel\\orders.aspx.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T03:42:45.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "register.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\User\\register.aspx",
+              "RelativeDocumentMoniker": "User\\register.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\User\\register.aspx",
+              "RelativeToolTip": "User\\register.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-11T09:10:25.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "checkout.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\checkout.aspx.cs",
+              "RelativeDocumentMoniker": "Shop\\checkout.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\checkout.aspx.cs",
+              "RelativeToolTip": "Shop\\checkout.aspx.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAwwJQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T10:52:43.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "checkout.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\checkout.aspx",
+              "RelativeDocumentMoniker": "Shop\\checkout.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Shop\\checkout.aspx",
+              "RelativeToolTip": "Shop\\checkout.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-10T10:52:32.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\script.js",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\script.js",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\script.js",
+              "RelativeToolTip": "Admin\\AdminPanel\\script.js",
+              "ViewState": "AgIAAIACAAAAAAAAAAAAwJECAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-10T03:49:51.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "admin_login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\admin_login.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\admin_login.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\admin_login.aspx.cs",
+              "RelativeToolTip": "Admin\\AdminPanel\\admin_login.aspx.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAACgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T03:42:03.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "login_admin.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\login_admin.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\login_admin.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\login_admin.aspx.cs",
+              "RelativeToolTip": "Admin\\AdminPanel\\login_admin.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T03:41:59.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "categories.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\categories.aspx.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminPanel\\categories.aspx.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\Admin\\AdminPanel\\categories.aspx.cs",
+              "RelativeToolTip": "Admin\\AdminPanel\\categories.aspx.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T03:41:20.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "login.aspx",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\User\\login.aspx",
+              "RelativeDocumentMoniker": "User\\login.aspx",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Online_Medicine_Ordering\\User\\login.aspx",
+              "RelativeToolTip": "User\\login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-10-07T16:02:43.257Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
